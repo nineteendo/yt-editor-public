@@ -9,11 +9,6 @@
     2. **Create an `audio` subdirectory**:
         1. Download or create a piano arrangement and save it as `full.mid`
         2. Simplify the full midi and convert it to json:
-            <!--TODO:
-            1. Remove `"division": 1`
-            2. Fix the formatting
-            3. Save the output as `simple.json`
-            -->
             ```bash
             python src/audio/simplify_midi.py {videoNumber}
             python src/audio/midi2json.py {videoNumber}
