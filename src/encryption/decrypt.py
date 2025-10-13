@@ -1,4 +1,4 @@
-"""Decrypt file."""
+"""Decrypt file(s)."""
 from __future__ import annotations
 
 __all__: list[str] = []
@@ -6,6 +6,7 @@ __all__: list[str] = []
 import zlib
 from argparse import ArgumentParser, Namespace
 from base64 import b64decode
+from glob import glob
 
 import jsonyx as json
 from cryptography.hazmat.primitives.asymmetric.padding import MGF1, OAEP
@@ -17,14 +18,14 @@ from cryptography.hazmat.primitives.serialization import load_pem_private_key
 
 
 def _parse_args() -> Namespace:
-    parser: ArgumentParser = ArgumentParser(description="Decrypt file.")
-    parser.add_argument("file", help="The file to decrypt")
+    parser: ArgumentParser = ArgumentParser(description="Decrypt file(s).")
+    parser.add_argument("--glob", action="store_true", help="Expand pattern")
+    parser.add_argument("file", help="The file(s) to decrypt")
     return parser.parse_args()
 
 
-def _main() -> None:
-    args: Namespace = _parse_args()
-    with open(args.file, "r", encoding="utf-8") as fp:
+def _decrypt_file(filename: str) -> None:
+    with open(filename, "r", encoding="utf-8") as fp:
         encrypted_data: dict[str, str] = json.load(fp)
 
     with open("auth/private.pem", "rb") as f:
@@ -39,8 +40,17 @@ def _main() -> None:
     )
     compressed_data: bytes = AESGCM(aes_key).decrypt(nonce, ciphertext, None)
     data: bytes = zlib.decompress(compressed_data)
-    with open(args.file.removesuffix(".enc"), "wb") as fp:
+    with open(filename.removesuffix(".enc"), "wb") as fp:
         fp.write(data)
+
+
+def _main() -> None:
+    args: Namespace = _parse_args()
+    if args.glob:
+        for filename in glob(args.file):
+            _decrypt_file(filename)
+    else:
+        _decrypt_file(args.file)
 
 
 if __name__ == "__main__":
