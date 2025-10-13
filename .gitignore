@@ -1,0 +1,6 @@
+auth/*
+!auth/public.pem
+videos/*/audio/*
+!videos/*/audio/*.enc
+.DS_Store
+.mypy_cache/
