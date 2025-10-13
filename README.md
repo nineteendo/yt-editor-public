@@ -20,7 +20,6 @@
             python src/encryption/encrypt.py videos/{videoNumber}/audio/simple.json
             ```
     3. **Generate captions**:
-        <!--TODO: Create a `captions` subdirectory-->
         ```bash
         python generate_captions {videoNumber}
         ```
