@@ -5,6 +5,7 @@ __all__: list[str] = []
 
 from argparse import ArgumentParser, Namespace
 from math import ceil, floor
+from os import makedirs
 from typing import Any
 
 import jsonyx as json
@@ -112,6 +113,7 @@ def _main() -> None:
         for caption_label in metadata["captionLabels"]
     ]
     caption_dir: str = f"videos/{video_number}/captions"
+    makedirs(caption_dir, exist_ok=True)
     for language in languages:
         captions: str = _get_captions(
             notes, ticks_per_minute, settings["introDuration"], [language]
