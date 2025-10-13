@@ -1,9 +1,9 @@
 """Decrypt file."""
 from __future__ import annotations
-import zlib
 
 __all__: list[str] = []
 
+import zlib
 from argparse import ArgumentParser, Namespace
 from base64 import b64decode
 
