@@ -1,4 +1,4 @@
-"""Encrypt file."""
+"""Encrypt file(s)."""
 from __future__ import annotations
 
 __all__: list[str] = []
@@ -7,6 +7,7 @@ import zlib
 from argparse import ArgumentParser, Namespace
 from base64 import b64encode
 from os import urandom
+from glob import glob
 
 import jsonyx as json
 from cryptography.hazmat.primitives.asymmetric.padding import MGF1, OAEP
@@ -18,14 +19,14 @@ from cryptography.hazmat.primitives.serialization import load_pem_public_key
 
 
 def _parse_args() -> Namespace:
-    parser: ArgumentParser = ArgumentParser(description="Encrypt file.")
-    parser.add_argument("file", help="The file to encrypt")
+    parser: ArgumentParser = ArgumentParser(description="Encrypt file(s).")
+    parser.add_argument("--glob", action="store_true", help="Expand pattern")
+    parser.add_argument("file", help="The file(s) to encrypt")
     return parser.parse_args()
 
 
-def _main() -> None:
-    args: Namespace = _parse_args()
-    with open(args.file, "rb") as fp:
+def _encrypt_file(filename: str) -> None:
+    with open(filename, "rb") as fp:
         data: bytes = fp.read()
 
     with open("auth/public.pem", "rb") as f:
@@ -44,8 +45,17 @@ def _main() -> None:
         "encrypted_key": b64encode(encrypted_key).decode(),
         "ciphertext": b64encode(ciphertext).decode()
     }
-    with open(args.file + ".enc", "w", encoding="utf-8") as fp:
+    with open(filename + ".enc", "w", encoding="utf-8") as fp:
         json.dump(encrypted_data, fp, indent=4)
+
+
+def _main() -> None:
+    args: Namespace = _parse_args()
+    if args.glob:
+        for filename in glob(args.file):
+            _encrypt_file(filename)
+    else:
+        _encrypt_file(args.file)
 
 
 if __name__ == "__main__":
