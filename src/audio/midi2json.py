@@ -4,12 +4,13 @@ from __future__ import annotations
 __all__: list[str] = []
 
 from argparse import ArgumentParser, Namespace
-from contextlib import redirect_stdout
 from fractions import Fraction
 
 import jsonyx as json
 from mido import MidiFile, MidiTrack  # type: ignore
 
+_BPM: float = 120
+_INTRO_DURATION: int = 4
 _NOTE_NAMES: list[str] = [
     'C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'
 ]
@@ -31,18 +32,12 @@ def _midi_to_note_string(midi_note: int) -> str:
     return f"{_NOTE_NAMES[base_note]}{octave}"
 
 
-def _convert_track(track: MidiTrack, ticks_per_beat: int) -> None:
+def _convert_track(track: MidiTrack, ticks_per_beat: int) -> str:
     total_duration: Fraction = Fraction()
-    first: bool = True
-    print("[")
+    notes: list[str] = []
     for msg in track:
         if duration := Fraction(_PPQ * msg.time, ticks_per_beat):
-            if not first:
-                print(",")
-
-            if total_duration and not total_duration % (4 * _PPQ):
-                print()
-
+            old_total_duration: Fraction = total_duration
             total_duration += duration
             if msg.type == 'note_on' and msg.velocity:
                 note_str: str | None = None
@@ -54,17 +49,20 @@ def _convert_track(track: MidiTrack, ticks_per_beat: int) -> None:
             else:
                 continue
 
-            first = False
+            if notes:
+                notes.append(",\n")
+                if not old_total_duration % (4 * _PPQ):
+                    notes.append("\n")
+
             division: int = duration.denominator
-            print(end=4 * " ")
-            json.dump({
+            notes.append(8 * " ")
+            notes.append(json.dumps({
                 "note": note_str,
                 "ticks": duration.numerator,
                 **({"division": division} if division > 1 else {})
-            }, end="")
+            }, end=""))
 
-    print()
-    print(end="]")
+    return "".join(notes)
 
 
 def _main() -> None:
@@ -75,8 +73,18 @@ def _main() -> None:
         raise ValueError("Not exactly one track")
 
     json_filename: str = f'videos/{video_number}/audio/simple.json'
-    with open(json_filename, 'w', encoding='utf-8') as fp, redirect_stdout(fp):
-        _convert_track(tracks[0], midi.ticks_per_beat)
+    with open(json_filename, "w", encoding="utf-8") as fp:
+        fp.write("\n".join([
+            '{',
+            f'    "introDuration": {_INTRO_DURATION},',
+            f'    "bpm": {_BPM},',
+            f'    "ppq": {_PPQ},',
+            '    "captionLabels": [],',
+            '    "notes": [',
+            _convert_track(tracks[0], midi.ticks_per_beat),
+            '    ]',
+            '}',
+        ]))
 
 
 if __name__ == "__main__":
