@@ -2,7 +2,6 @@
     "videoId": "XtfY7RMEPIg",
     "privacyStatus": "unlisted",
     "publishSchedule": {"epoch": "2025-02-28", "interval": 1},
-    "introDuration": 4,
     "videos": [
         {
             "videoNumber": 1,
@@ -34,7 +33,6 @@
             "tags": ["Nice Zombies", "rick astley", "never gonna give you up", "piano", "lyrics", "ascii art"],
             "categoryTitle": "Music",
             "gameInfo": null,
-            "captionLabels": [{"language": "en", "name": "lyrics"}],
             "resolutionLanguage": "en",
             "resolutionNames": [
                 " 48p",
@@ -45,9 +43,7 @@
                 "272p1.8 (portrait)",
                 "312p1.3 (portrait)",
                 "352p1.1 (portrait)"
-            ],
-            "bpm": 113.5,
-            "ppq": 16
+            ]
         },
         {
             "videoNumber": 2,
@@ -81,10 +77,6 @@
             "tags": ["Nice Zombies", "zun", "ずん", "bad apple", "バッドアップル", "piano", "lyrics", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Lotus Land Story", "year": 1998},
-            "captionLabels": [
-                {"language": "ja", "name": "lyrics (original)"},
-                {"language": "en", "name": "lyrics (cover)"}
-            ],
             "resolutionLanguage": "ja",
             "resolutionNames": [
                 " 48p",
@@ -95,9 +87,7 @@
                 "272p2.1 (portrait)",
                 "312p1.6 (portrait)",
                 "352p1.3 (portrait)"
-            ],
-            "bpm": 138,
-            "ppq": 16
+            ]
         },
         {
             "videoNumber": 3,
@@ -137,10 +127,6 @@
             "tags": ["Nice Zombies", "laura shigihara", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "piano", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
-            "captionLabels": [
-                {"language": "en", "name": "lyrics"},
-                {"language": "ja", "name": "lyrics"}
-            ],
             "resolutionLanguage": "en",
             "resolutionNames": [
                 " 48p",
@@ -151,9 +137,7 @@
                 "272p1.9 (portrait)",
                 "312p1.5 (portrait)",
                 "352p1.1 (portrait)"
-            ],
-            "bpm": 105,
-            "ppq": 16
+            ]
         }
     ]
 }

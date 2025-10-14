@@ -21,16 +21,6 @@ def _parse_args() -> Namespace:
     return parser.parse_args()
 
 
-def _get_video(
-    videos: list[dict[str, Any]], video_number: int
-) -> dict[str, Any]:
-    for video in videos:
-        if video["videoNumber"] == video_number:
-            return video
-
-    raise ValueError(f"Could not find {video_number}")
-
-
 def _format_ms(ms: int) -> str:
     ss, ttt = divmod(ms, 1000)
     mm, ss = divmod(ss, 60)
@@ -62,9 +52,11 @@ def _append_caption(
             _get_lyrics_text(lyrics, language) for language in languages
         )
 
-    captions.append(
-        f"{len(captions) + 1}\n{start_str} --> {end_str}\n{lyrics_text}"
-    )
+    captions.append("\n".join([
+        f"{len(captions) + 1}",
+        f"{start_str} --> {end_str}",
+        lyrics_text
+    ]))
 
 
 def _get_captions(
@@ -99,24 +91,21 @@ def _get_captions(
 
 def _main() -> None:
     video_number: int = _parse_args().video_number
-    with open("config/settings.json", "r", encoding="utf-8") as fp:
-        settings: dict[str, Any] = json.load(fp)
-
     audio_filename: str = f"videos/{video_number}/audio/simple.json"
     with open(audio_filename, "r", encoding="utf-8") as fp:
-        notes: list[dict[str, Any]] = json.load(fp)
+        audio: dict[str, Any] = json.load(fp)
 
-    metadata: dict[str, Any] = _get_video(settings["videos"], video_number)
-    ticks_per_minute: float = metadata["bpm"] * metadata["ppq"]
+    ticks_per_minute: float = audio["bpm"] * audio["ppq"]
     languages: list[str] = [
         caption_label["language"]
-        for caption_label in metadata["captionLabels"]
+        for caption_label in audio["captionLabels"]
     ]
     caption_dir: str = f"videos/{video_number}/captions"
     makedirs(caption_dir, exist_ok=True)
     for language in languages:
         captions: str = _get_captions(
-            notes, ticks_per_minute, settings["introDuration"], [language]
+            audio["notes"], ticks_per_minute, audio["introDuration"],
+            [language]
         )
         output_file: str = f"{caption_dir}/{language}.srt"
         with open(output_file, 'w', encoding="utf-8") as fp:
@@ -124,7 +113,8 @@ def _main() -> None:
 
     if len(languages) >= 2:
         captions = _get_captions(
-            notes, ticks_per_minute, settings["introDuration"], languages
+            audio["notes"], ticks_per_minute, audio["introDuration"],
+            languages
         )
         output_file = f"{caption_dir}/{'-'.join(languages)}.srt"
         with open(output_file, 'w', encoding="utf-8") as fp:
