@@ -67,7 +67,7 @@ def _get_captions(
 ) -> str:
     captions: list[str] = []
     start: float = 0
-    lyrics: list[dict[str, Any]] | str | None = ""
+    lyrics: list[dict[str, Any]] | str | None = None
     for msg in notes:
         tick_count: int = msg["ticks"] / msg.get("division", 1)
         if "lyrics" in msg:

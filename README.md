@@ -71,7 +71,7 @@
 
 1. Set `"videoNumber"` to `{videoNumber}`
 2. Set `"title"` to `"{artist} - {name}"`
-3. Add lyrics/translations and relevant links to `"descriptionLines"`
+3. Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
 4. Add relevant tags
 5. Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
 6. If applicable, add title and year to `"gameInfo"`
