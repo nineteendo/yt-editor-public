@@ -45,7 +45,7 @@
                 "192p3.3",
                 "232p2.3 (portrait)",
                 "272p1.8 (portrait)",
-                "312p1.3 (portrait)",
+                "312p1.4 (portrait)",
                 "352p1.1 (portrait)"
             ]
         },
@@ -90,7 +90,7 @@
                 " 48p",
                 " 96p15",
                 "144p6",
-                "192p3.8",
+                "192p3.7",
                 "232p2.7 (portrait)",
                 "272p2.1 (portrait)",
                 "312p1.6 (portrait)",
@@ -144,11 +144,11 @@
                 " 48p",
                 " 96p15",
                 "144p6",
-                "192p3.7",
+                "192p3.8",
                 "232p2.5 (portrait)",
                 "272p1.9 (portrait)",
                 "312p1.5 (portrait)",
-                "352p1.1 (portrait)"
+                "352p1.2 (portrait)"
             ]
         }
     ]
