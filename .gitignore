@@ -2,5 +2,7 @@ auth/*
 !auth/public.pem
 videos/*/audio/*
 !videos/*/audio/*.enc
+videos/*/resolutions/*
+!videos/*/resolutions/*.gz
 .DS_Store
 .mypy_cache/
