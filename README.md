@@ -57,6 +57,10 @@
             --submsoffset 4000
         ```
     2. Repeat 8 times.
+    3. Compress the Srv3 files:
+        ```bash
+        python src/compression/compress.py --glob videos/{videoNumber}/resolutions/*.srv3
+        ```
 5. **Create a `thumbnails` subdirectory**:
     1. Download/create a thumbnail and save it as `original.png`
     2. Convert the original thumbnail to Srv3 using https://github.com/nineteendo/Mp4-To-Srv3:
