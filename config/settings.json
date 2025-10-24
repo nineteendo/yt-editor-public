@@ -39,14 +39,14 @@
             "gameInfo": null,
             "resolutionLanguage": "en",
             "resolutionNames": [
-                " 48p",
-                " 96p10",
-                "144p5",
-                "192p3.3",
-                "232p2.3 (portrait)",
-                "272p1.8 (portrait)",
-                "312p1.4 (portrait)",
-                "352p1.1 (portrait)"
+                "12p",
+                "24p10",
+                "36p5",
+                "48p3.3",
+                "58p2.3 (portrait)",
+                "68p1.8 (portrait)",
+                "78p1.4 (portrait)",
+                "88p1.1 (portrait)"
             ]
         },
         {
@@ -141,14 +141,14 @@
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
             "resolutionLanguage": "en",
             "resolutionNames": [
-                " 48p",
-                " 96p15",
-                "144p6",
-                "192p3.8",
-                "232p2.5 (portrait)",
-                "272p1.9 (portrait)",
-                "312p1.5 (portrait)",
-                "352p1.2 (portrait)"
+                "12p",
+                "24p15",
+                "36p6",
+                "48p3.8",
+                "58p2.5 (portrait)",
+                "68p1.9 (portrait)",
+                "78p1.5 (portrait)",
+                "88p1.2 (portrait)"
             ]
         }
     ]
