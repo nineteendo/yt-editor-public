@@ -53,10 +53,11 @@
         ```bash
         cd ../Mp4-To-Srv3
         python main.py ../yt-editor-public/videos/{videoNumber}/videos/short.mp4 {rows} \
+            --layers {layers} \
             --subfile ../yt-editor-public/videos/{videoNumber}/captions/{languages}.srt \
             --submsoffset 4000
         ```
-    2. Repeat 8 times.
+    2. Repeat 12 times.
     3. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py --glob videos/{videoNumber}/resolutions/*.srv3
