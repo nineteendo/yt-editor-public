@@ -41,7 +41,7 @@
             ```
     4. Encrypt the audio files:
         ```bash
-        python src/encryption/encrypt.py --glob videos/{videoNumber}/audio/*.mid
+        python src/encryption/encrypt.py videos/{videoNumber}/audio/*.mid
         python src/encryption/encrypt.py videos/{videoNumber}/audio/simple.json
         ```
 3. **Generate srt files**:
@@ -60,7 +60,7 @@
     2. Repeat 12 times.
     3. Compress the Srv3 files:
         ```bash
-        python src/compression/compress.py --glob videos/{videoNumber}/resolutions/*.srv3
+        python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
         ```
 5. **Create a `thumbnails` subdirectory**:
     1. Download/create a thumbnail and save it as `original.png`

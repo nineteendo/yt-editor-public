@@ -70,7 +70,7 @@ def _main() -> None:
     midi: MidiFile = MidiFile(f'videos/{video_number}/audio/simple.mid')
     tracks: list[MidiTrack] = midi.tracks
     if len(tracks) != 1:
-        raise ValueError("Not exactly one track")
+        raise SystemExit("Not exactly one track")
 
     json_filename: str = f'videos/{video_number}/audio/simple.json'
     with open(json_filename, "w", encoding="utf-8") as fp:

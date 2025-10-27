@@ -36,7 +36,7 @@ def _parse_args() -> Namespace:
 
 def _note_string_to_midi(note_str: str) -> int:
     if not (match := _NOTE_STRING.fullmatch(note_str)):
-        raise ValueError(f"Invalid note string: {note_str}")
+        raise SystemExit(f"Invalid note string: {note_str}")
 
     note_name, accidental, octave = match.groups()
     midi: int = 12 * (int(octave) + 1) + _BASE_NOTES[note_name]
