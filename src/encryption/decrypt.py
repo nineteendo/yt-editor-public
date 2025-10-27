@@ -19,8 +19,7 @@ from cryptography.hazmat.primitives.serialization import load_pem_private_key
 
 def _parse_args() -> Namespace:
     parser: ArgumentParser = ArgumentParser(description="Decrypt file(s).")
-    parser.add_argument("--glob", action="store_true", help="Expand pattern")
-    parser.add_argument("file", help="The file(s) to decrypt")
+    parser.add_argument("files", nargs="+", help="The file(s) to decrypt")
     return parser.parse_args()
 
 
@@ -46,11 +45,12 @@ def _decrypt_file(filename: str) -> None:
 
 def _main() -> None:
     args: Namespace = _parse_args()
-    if args.glob:
-        for filename in glob(args.file):
-            _decrypt_file(filename)
-    else:
-        _decrypt_file(args.file)
+    for file in args.files:
+        if not (matches := glob(file)):
+            raise SystemExit(f"No matches found: {file}")
+
+        for match in matches:
+            _decrypt_file(match)
 
 
 if __name__ == "__main__":

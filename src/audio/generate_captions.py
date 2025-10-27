@@ -33,7 +33,7 @@ def _get_lyrics_text(lyrics: list[dict[str, Any]], language: str) -> str:
         if lyrics_translation["language"] == language:
             return lyrics_translation["text"]
 
-    raise ValueError(f"Could not find {language} in {lyrics}")
+    raise SystemExit(f"Could not find {language} in {lyrics}")
 
 
 def _append_caption(
@@ -84,7 +84,7 @@ def _get_captions(
         _append_caption(captions, start, end, lyrics, languages)
 
     if len(captions) <= 1:
-        raise ValueError("Empty captions")
+        raise SystemExit("Empty captions")
 
     return "\n\n".join(captions)
 
