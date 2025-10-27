@@ -11,8 +11,7 @@ from glob import glob
 
 def _parse_args() -> Namespace:
     parser: ArgumentParser = ArgumentParser(description="Decompress file(s).")
-    parser.add_argument("--glob", action="store_true", help="Expand pattern")
-    parser.add_argument("file", help="The file(s) to decompress")
+    parser.add_argument("files", nargs="+", help="The file(s) to decompress")
     return parser.parse_args()
 
 
@@ -29,11 +28,12 @@ def _decompress_file(filename: str) -> None:
 
 def _main() -> None:
     args: Namespace = _parse_args()
-    if args.glob:
-        for filename in glob(args.file):
-            _decompress_file(filename)
-    else:
-        _decompress_file(args.file)
+    for file in args.files:
+        if not (matches := glob(file)):
+            raise SystemExit(f"No matches found: {file}")
+
+        for match in matches:
+            _decompress_file(match)
 
 
 if __name__ == "__main__":
