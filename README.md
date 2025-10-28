@@ -77,8 +77,9 @@
 1. Set `"videoNumber"` to `{videoNumber}`
 2. Set `"title"` to `"{artist} - {name}"`
 3. Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
-4. Add relevant tags
-5. Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
-6. If applicable, add title and year to `"gameInfo"`
-7. Set `"resolutionLanguage"` to the original language
-8. Add resolution names (with leading spaces)
+4. Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
+5. Add relevant tags
+6. Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
+7. If applicable, add title and year to `"gameInfo"`
+8. Set `"resolutionLanguage"` to the original language
+9. Add resolution names (with leading spaces)
