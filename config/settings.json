@@ -34,6 +34,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
+            "playlistTitles": [],
             "tags": ["Nice Zombies", "rick astley", "never gonna give you up", "piano", "lyrics", "ascii art"],
             "categoryTitle": "Music",
             "gameInfo": null,
@@ -86,6 +87,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
+            "playlistTitles": [],
             "tags": ["Nice Zombies", "zun", "ずん", "bad apple", "バッドアップル", "piano", "lyrics", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Lotus Land Story", "year": 1998},
@@ -140,6 +142,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
+            "playlistTitles": ["Plants vs. Zombies"],
             "tags": ["Nice Zombies", "laura shigihara", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "piano", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
