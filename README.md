@@ -52,10 +52,9 @@
     1. Convert the trimmed video to Srv3 using https://github.com/nineteendo/Mp4-To-Srv3:
         ```bash
         cd ../Mp4-To-Srv3
-        python main.py ../yt-editor-public/videos/{videoNumber}/videos/short.mp4 {rows} \
-            --layers {layers} \
+        python src ../yt-editor-public/videos/{videoNumber}/videos/short.mp4 \
             --subfile ../yt-editor-public/videos/{videoNumber}/captions/{languages}.srt \
-            --submsoffset 4000
+            --submsoffset 4000 --rows {rows} --layers {layers} --targetsize {targetsize}
         ```
     2. Repeat 12 times.
     3. Compress the Srv3 files:
@@ -67,7 +66,8 @@
     2. Convert the original thumbnail to Srv3 using https://github.com/nineteendo/Mp4-To-Srv3:
         ```bash
         cd ../Mp4-To-Srv3
-        python main.py ../yt-editor-public/videos/{videoNumber}/thumbnails/original.png {rows}
+        python src ../yt-editor-public/videos/{videoNumber}/thumbnails/original.png \
+            --rows {rows}
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
     4. Take a screenshot and save it as `ascii.png`
