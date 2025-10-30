@@ -52,30 +52,35 @@
     1. Convert the trimmed video to Srv3:
         ```bash
         cd videos/{videoNumber}
-        mp4_to_srv3 videos/short.mp4 --subfile captions/{captionLanguages}.srt --dir resolutions \
+        mp4_to_srv3 videos/short.mp4 --subfile captions/{captionLanguages}.srt \
+            --dir resolutions \
             --submsoffset 4000 --rows {rows} --layers {layers} --targetsize {targetsize}
         ```
     2. Repeat 12 times (8 times for black and white):
         - 1 layer:
-            | Aspect ratio | Rows                              |
-            |:-------------|:----------------------------------|
-            | **4x3**      | 12, 24, 36, 48, 58, 68, 78 and 88 |
+            | Aspect ratio |  Rows (landscape) |   Rows (portrait) |
+            |:-------------|------------------:|------------------:|
+            | **4x3**      | 12, 24, 36 and 48 | 58, 68, 78 and 88 |
+            | **16x9**     | 11, 22, 33 and 44 | 54, 64, 74 and 84 |
+            | **64x27**    |  8, 16, 24 and 32 | 38, 44, 50 and 56 |
         - 4 layers (colored only):
-            | Aspect ratio | Rows              |
-            |:-------------|:------------------|
+            | Aspect ratio |  Rows (landscape) |
+            |:-------------|------------------:|
             | **4x3**      | 30, 36, 42 and 48 |
+            | **16x9**     | 28, 34, 40 and 46 |
+            | **64x27**    | 20, 24, 28 and 32 |
     3. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
         ```
 5. **Create a `thumbnails` subdirectory**:
-    1. Download/create a thumbnail and save it as `original.png`
+    1. Download/create a 16x9 thumbnail and save it as `original.png`
     2. Convert the original thumbnail to Srv3:
         ```bash
         mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows 84
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
-    4. Take a screenshot and save it as `ascii.png`
+    4. Take a screenshot, crop it and save it as `ascii.png`
 
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
