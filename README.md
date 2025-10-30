@@ -15,8 +15,8 @@
         python src/audio/midi2json.py {videoNumber}
         ```
     3. Edit `simple.json`:
-        1. Set `"bpm"`, add initial rest and cut off notes to match the trimmed video
-        2. Add original language/translations to `"captionLabels"` and include lyrics, e.g.:
+        - Set `"bpm"`, add initial rest and cut off notes to match the trimmed video
+        - Add original language/translations to `"captionLabels"` and include lyrics, e.g.:
             ```json5
             {
                 "captionLabels": [
@@ -55,7 +55,15 @@
         mp4_to_srv3 videos/short.mp4 --subfile captions/{captionLanguages}.srt --dir resolutions \
             --submsoffset 4000 --rows {rows} --layers {layers} --targetsize {targetsize}
         ```
-    2. Repeat 12 times.
+    2. Repeat 12 times (8 times for black and white):
+        - 1 layer:
+            | Aspect ratio | Rows                              |
+            |:-------------|:----------------------------------|
+            | **4x3**      | 12, 24, 36, 48, 58, 68, 78 and 88 |
+        - 4 layers (colored only):
+            | Aspect ratio | Rows              |
+            |:-------------|:------------------|
+            | **4x3**      | 30, 36, 42 and 48 |
     3. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
@@ -64,19 +72,19 @@
     1. Download/create a thumbnail and save it as `original.png`
     2. Convert the original thumbnail to Srv3:
         ```bash
-        mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows {rows}
+        mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows 84
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
     4. Take a screenshot and save it as `ascii.png`
 
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
-1. Set `"videoNumber"` to `{videoNumber}`
-2. Set `"title"` to `"{artist} - {name}"`
-3. Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
-4. Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
-5. Add relevant tags
-6. Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
-7. If applicable, add title and year to `"gameInfo"`
-8. Set `"resolutionLanguage"` to the original language
-9. Add resolution names (with leading spaces)
+- Set `"videoNumber"` to `{videoNumber}`
+- Set `"title"` to `"{artist} - {name}"`
+- Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
+- Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
+- Add relevant tags
+- Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
+- If applicable, add title and year to `"gameInfo"`
+- Set `"resolutionLanguage"` to the original language
+- Add resolution names (with leading spaces)
