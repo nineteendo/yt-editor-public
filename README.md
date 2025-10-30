@@ -41,19 +41,18 @@
             ```
     4. Encrypt the audio files:
         ```bash
-        python src/encryption/encrypt.py videos/{videoNumber}/audio/*.mid
-        python src/encryption/encrypt.py videos/{videoNumber}/audio/simple.json
+        python src/encryption/encrypt.py videos/{videoNumber}/audio/*.mid \
+            videos/{videoNumber}/audio/*.json
         ```
 3. **Generate srt files**:
     ```bash
     python src/audio/generate_captions.py {videoNumber}
     ```
-4. **Create a `resolutions` subdirectory**:
-    1. Convert the trimmed video to Srv3 using https://github.com/nineteendo/Mp4-To-Srv3:
+4. **Generate srv3 files**:
+    1. Convert the trimmed video to Srv3:
         ```bash
-        cd ../Mp4-To-Srv3
-        python src ../yt-editor-public/videos/{videoNumber}/videos/short.mp4 \
-            --subfile ../yt-editor-public/videos/{videoNumber}/captions/{languages}.srt \
+        cd videos/{videoNumber}
+        mp4_to_srv3 videos/short.mp4 --subfile captions/{captionLanguages}.srt --dir resolutions \
             --submsoffset 4000 --rows {rows} --layers {layers} --targetsize {targetsize}
         ```
     2. Repeat 12 times.
@@ -63,11 +62,9 @@
         ```
 5. **Create a `thumbnails` subdirectory**:
     1. Download/create a thumbnail and save it as `original.png`
-    2. Convert the original thumbnail to Srv3 using https://github.com/nineteendo/Mp4-To-Srv3:
+    2. Convert the original thumbnail to Srv3:
         ```bash
-        cd ../Mp4-To-Srv3
-        python src ../yt-editor-public/videos/{videoNumber}/thumbnails/original.png \
-            --rows {rows}
+        mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows {rows}
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
     4. Take a screenshot and save it as `ascii.png`
