@@ -56,19 +56,27 @@
             --dir resolutions \
             --submsoffset 4000 --rows {rows} --layers {layers} --targetsize {targetsize}
         ```
-    2. Repeat 12 times (8 times for black and white):
+    2. Repeat 10 times (7 times for black and white):
+        <!--
+        - maximum row counts:
+            | Aspect ratio | iOS (16:9) | Windows (16:9) | macOS (16:9) | macOS (native) | Windows (9:16) | macOS (9:16) |
+            |:-------------|-----------:|---------------:|-------------:|---------------:|---------------:|-------------:|
+            | **4:3**      |    12 rows |        40 rows |      48 rows |        63 rows |        72 rows |      88 rows |
+            | **16:9**     |    12 rows |        40 rows |      46 rows |                |        69 rows |      84 rows |
+            | **64:27**    |     9 rows |        32 rows |      35 rows |        46 rows |        57 rows |      58 rows |
+        -->
         - 1 layer:
-            | Aspect ratio |  Rows (landscape) |   Rows (portrait) |
-            |:-------------|------------------:|------------------:|
-            | **4x3**      | 12, 24, 36 and 48 | 58, 68, 78 and 88 |
-            | **16x9**     | 11, 22, 33 and 44 | 54, 64, 74 and 84 |
-            | **64x27**    |  8, 16, 24 and 32 | 38, 44, 50 and 56 |
+            | Aspect ratio |       Rows (16:9) | Rows (native) |   Rows (9:16) |
+            |:-------------|------------------:|--------------:|--------------:|
+            | **4:3**      | 12, 24, 36 and 48 |            60 |     72 and 84 |
+            | **16:9**     | 10, 20, 30 and 40 |               | 50, 60 and 70 |
+            | **64:27**    |  8, 16, 24 and 32 |            40 |     48 and 56 |
         - 4 layers (colored only):
-            | Aspect ratio |  Rows (landscape) |
-            |:-------------|------------------:|
-            | **4x3**      | 30, 36, 42 and 48 |
-            | **16x9**     | 28, 34, 40 and 46 |
-            | **64x27**    | 20, 24, 28 and 32 |
+            | Aspect ratio |   Rows (16:9) |
+            |:-------------|--------------:|
+            | **4:3**      | 30, 36 and 42 |
+            | **16:9**     | 25, 30 and 35 |
+            | **64:27**    | 20, 24 and 28 |
     3. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
