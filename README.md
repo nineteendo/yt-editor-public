@@ -77,12 +77,13 @@
             | **4:3**      | 30, 36 and 42 |
             | **16:9**     | 25, 30 and 35 |
             | **64:27**    | 20, 24 and 28 |
-    3. Compress the Srv3 files:
+    3. If applicable, add `(narrow)` or `(wide)` to the native resolution
+    4. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
         ```
 5. **Create a `thumbnails` subdirectory**:
-    1. Download/create a 16x9 thumbnail and save it as `original.png`
+    1. Download/create a 16:9 thumbnail and save it as `original.png`
     2. Convert the original thumbnail to Srv3:
         ```bash
         mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows 84
