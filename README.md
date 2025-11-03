@@ -59,11 +59,11 @@
     2. Repeat 10 times (7 times for black and white):
         <!--
         - maximum row counts:
-            | Aspect ratio | iOS (16:9) | Windows (16:9) | macOS (16:9) | macOS (native) | Windows (9:16) | macOS (9:16) |
-            |:-------------|-----------:|---------------:|-------------:|---------------:|---------------:|-------------:|
-            | **4:3**      |    12 rows |        40 rows |      48 rows |        63 rows |        72 rows |      88 rows |
-            | **16:9**     |    12 rows |        40 rows |      46 rows |                |        69 rows |      84 rows |
-            | **64:27**    |     9 rows |        32 rows |      35 rows |        46 rows |        57 rows |      58 rows |
+            | Aspect ratio | iOS (16:9) | Windows (16:9) | macOS (16:9) | macOS (native) | Windows (9:16) | macOS (27:64) |
+            |:-------------|-----------:|---------------:|-------------:|---------------:|---------------:|--------------:|
+            | **4:3**      |    12 rows |        40 rows |      48 rows |        63 rows |        76 rows |       84 rows |
+            | **16:9**     |    12 rows |        40 rows |      46 rows |                |        68 rows |       84 rows |
+            | **64:27**    |     9 rows |        32 rows |      35 rows |        46 rows |        51 rows |       84 rows |
         -->
         - 1 layer:
             | Aspect ratio |       Rows (16:9) | Rows (native) |   Rows (9:16) |
