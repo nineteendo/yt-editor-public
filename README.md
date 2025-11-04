@@ -77,8 +77,7 @@
             | **4:3**      | 30, 36 and 42 |
             | **16:9**     | 25, 30 and 35 |
             | **64:27**    | 20, 24 and 28 |
-    3. If applicable, add `(narrow)` or `(wide)` to the native resolution
-    4. Compress the Srv3 files:
+    3. Compress the Srv3 files:
         ```bash
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
         ```
