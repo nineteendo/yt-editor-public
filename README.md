@@ -59,14 +59,14 @@
     2. Repeat 10 times (7 times for black and white):
         <!--
         - maximum row counts:
-            | Aspect ratio | iOS (16:9) | Windows (16:9 large text) | macOS (16:9) | macOS (native) | Windows (9:16 large text) | macOS (27:64) |
-            |:-------------|-----------:|--------------------------:|-------------:|---------------:|--------------------------:|--------------:|
-            | **4:3**      |    12 rows |                   33 rows |      48 rows |        63 rows |                 (61 rows) |       84 rows |
-            | **16:9**     |    12 rows |                   33 rows |      46 rows |                |                   58 rows |       84 rows |
-            | **64:27**    |     9 rows |                   25 rows |      35 rows |        46 rows |                 (44 rows) |       84 rows |
+            | Aspect ratio | iOS (16:9) | Windows (16:9 large text) | macOS (16:9) | macOS (native) | Windows (9:16 large text) | macOS (9:16) |
+            |:-------------|-----------:|--------------------------:|-------------:|---------------:|--------------------------:|-------------:|
+            | **4:3**      |    12 rows |                   33 rows |      49 rows |        63 rows |                 (60 rows) |      84 rows |
+            | **16:9**     |    12 rows |                   33 rows |      47 rows |                |                   58 rows |      84 rows |
+            | **64:27**    |     9 rows |                   25 rows |      35 rows |        45 rows |                 (43 rows) |      65 rows |
         -->
         - 1 layer:
-            | Aspect ratio |       Rows (16:9) | Rows (native) |  Rows (27:64) |
+            | Aspect ratio |       Rows (16:9) | Rows (native) |   Rows (9:16) |
             |:-------------|------------------:|--------------:|--------------:|
             | **4:3**      | 12, 24, 36 and 48 |            60 |     72 and 84 |
             | **16:9**     | 10, 20, 30 and 40 |               | 50, 60 and 70 |
