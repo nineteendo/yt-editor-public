@@ -1,4 +1,4 @@
 cryptography==46.0.2
 jsonyx==2.3.0
 mido==1.3.3
-mp4_to_srv3 @ git+https://github.com/nineteendo/Mp4-To-Srv3@a2c403fbe1ede329cc682122f79683c36ba9836d
+mp4_to_srv3 @ git+https://github.com/nineteendo/Mp4-To-Srv3@2b97c00b2855e3b105580ca52a412c06b0aa9fca

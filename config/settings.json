@@ -48,7 +48,7 @@
                 " 72p1.4",
                 " 84p1.1",
                 "60p2.1 (narrow)",
-                "72p1.7 (portrait)",
+                "72p1.6 (portrait)",
                 "84p1.2 (portrait)"
             ]
         },
@@ -94,7 +94,7 @@
                 " 48p",
                 " 96p15",
                 "144p7.5",
-                "192p3.7",
+                "192p4.3",
                 "240p2.7 (narrow)",
                 "288p1.9 (portrait)",
                 "336p1.4 (portrait)"
@@ -154,7 +154,7 @@
                 " 84p1.2",
                 "60p2.5 (narrow)",
                 "72p1.7 (portrait)",
-                "84p1.2 (portrait)"
+                "84p1.3 (portrait)"
             ]
         }
     ]
