@@ -1,5 +1,6 @@
 {
     "videoId": "XtfY7RMEPIg",
+    "globalTags": ["nice zombies", "subtitles", "piano", "ascii art"],
     "privacyStatus": "private",
     "publishSchedule": {"epoch": "2025-02-28", "interval": 1},
     "videos": [
@@ -36,7 +37,7 @@
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": [],
-            "tags": ["nice zombies", "rick astley", "never gonna give you up", "subtitles", "piano", "karaoke", "ascii art"],
+            "tags": ["rick astley", "never gonna give you up", "karaoke"],
             "categoryTitle": "Music",
             "gameInfo": null,
             "resolutionLanguage": "en",
@@ -87,7 +88,7 @@
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": [],
-            "tags": ["nice zombies", "zun", "ずん", "bad apple", "バッドアップル", "subtitles", "piano", "karaoke", "ascii art"],
+            "tags": ["zun", "ずん", "bad apple", "バッドアップル", "karaoke"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Lotus Land Story", "year": 1998},
             "resolutionLanguage": "ja",
@@ -141,7 +142,7 @@
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": ["Plants vs. Zombies"],
-            "tags": ["nice zombies", "laura shigihara", "鴫原 ローラ", "zombies on your lawn", "芝生にゾンビが", "subtitles", "plants vs zombies", "piano", "karaoke", "ascii art"],
+            "tags": ["laura shigihara", "鴫原 ローラ", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "karaoke"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
             "resolutionLanguage": "en",
