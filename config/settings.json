@@ -5,7 +5,7 @@
     "videos": [
         {
             "videoNumber": 1,
-            "title": "Rick Astley - Never Gonna Give You Up",
+            "title": "Rick Astley - Never Gonna Give You Up - but it's subtitles",
             "descriptionLines": [
                 "Lyrics:",
                 "We're no strangers to love",
@@ -31,11 +31,12 @@
                 "Links:",
                 "- Original: https://youtu.be/dQw4w9WgXcQ",
                 "- Piano tutorial: https://youtu.be/-tMXNxmAO2k",
+                "- Sheet music: https://musicnotes.com/sheetmusic/MN0250438",
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": [],
-            "tags": ["Nice Zombies", "rick astley", "never gonna give you up", "piano", "lyrics", "ascii art"],
+            "tags": ["nice zombies", "rick astley", "never gonna give you up", "subtitles", "piano", "karaoke", "ascii art"],
             "categoryTitle": "Music",
             "gameInfo": null,
             "resolutionLanguage": "en",
@@ -54,7 +55,7 @@
         },
         {
             "videoNumber": 2,
-            "title": "ZUN - Bad Apple!!",
+            "title": "ZUN - Bad Apple!! - but it's subtitles",
             "descriptionLines": [
                 "Lyrics (Original):",
                 "流れてく　時の中ででも　気だるさが　ほらグルグル廻って",
@@ -86,7 +87,7 @@
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": [],
-            "tags": ["Nice Zombies", "zun", "ずん", "bad apple", "バッドアップル", "piano", "lyrics", "ascii art"],
+            "tags": ["nice zombies", "zun", "ずん", "bad apple", "バッドアップル", "subtitles", "piano", "karaoke", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Lotus Land Story", "year": 1998},
             "resolutionLanguage": "ja",
@@ -102,7 +103,7 @@
         },
         {
             "videoNumber": 3,
-            "title": "Laura Shigihara - Zombies On Your Lawn",
+            "title": "Laura Shigihara - Zombies On Your Lawn - but it's subtitles",
             "descriptionLines": [
                 "Lyrics (English version):",
                 "One, two, three!",
@@ -135,12 +136,12 @@
                 "Links:",
                 "- English version: https://youtu.be/0N1_0SUGlDQ",
                 "- Japanese version: https://youtu.be/Ofd-SzGweTo",
-                "- Sheet music: https://www.musicnotes.com/sheetmusic/mtd.asp?ppn=MN0200131",
+                "- Sheet music: https://musicnotes.com/sheetmusic/MN0200131",
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
             "playlistTitles": ["Plants vs. Zombies"],
-            "tags": ["Nice Zombies", "laura shigihara", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "piano", "ascii art"],
+            "tags": ["nice zombies", "laura shigihara", "鴫原 ローラ", "zombies on your lawn", "芝生にゾンビが", "subtitles", "plants vs zombies", "piano", "karaoke", "ascii art"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
             "resolutionLanguage": "en",
