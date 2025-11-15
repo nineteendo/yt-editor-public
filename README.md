@@ -89,6 +89,7 @@
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
     4. Take a screenshot, crop it and save it as `ascii.png`
+    5. Combine both thumbnails and save them as `combined.png`
 
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
