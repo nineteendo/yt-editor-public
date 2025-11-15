@@ -94,7 +94,7 @@
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
 - Set `"videoNumber"` to `{videoNumber}`
-- Set `"title"` to `"{artist} - {name}"`
+- Set `"title"` to `"{artist} - {name} - but it's subtitles"`
 - Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
 - Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
 - Add relevant tags
