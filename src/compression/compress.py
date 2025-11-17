@@ -16,8 +16,8 @@ def _parse_args() -> Namespace:
 
 
 def _compress_file(filename: str) -> None:
-    with open(filename, "rb") as fp:
-        data: bytes = fp.read()
+    with open(filename, "r", encoding="utf-8") as fp:
+        data: bytes = fp.read().encode()
 
     compressed_data: bytes = gzip.compress(data)
     with open(filename + ".gz", "wb") as fp:

@@ -39,8 +39,13 @@ def _decrypt_file(filename: str) -> None:
     )
     compressed_data: bytes = AESGCM(aes_key).decrypt(nonce, ciphertext, None)
     data: bytes = zlib.decompress(compressed_data)
-    with open(filename.removesuffix(".enc"), "wb") as fp:
-        fp.write(data)
+    new_filename: str = filename.removesuffix(".enc")
+    if new_filename.endswith(".mid"):
+        with open(new_filename, "wb") as fp:
+            fp.write(data)
+    else:
+        with open(new_filename, "w", encoding="utf-8") as fp:
+            fp.write(data.decode())
 
 
 def _main() -> None:
