@@ -25,8 +25,12 @@ def _parse_args() -> Namespace:
 
 
 def _encrypt_file(filename: str) -> None:
-    with open(filename, "rb") as fp:
-        data: bytes = fp.read()
+    if filename.endswith(".mid"):
+        with open(filename, "rb") as fp:
+            data: bytes = fp.read()
+    else:
+        with open(filename, "r", encoding="utf-8") as fp:
+            data = fp.read().encode()
 
     with open("auth/public.pem", "rb") as f:
         public_key: PublicKeyTypes = load_pem_public_key(f.read())

@@ -20,8 +20,8 @@ def _decompress_file(filename: str) -> None:
         compressed_data: bytes = fp.read()
 
     data: bytes = gzip.decompress(compressed_data)
-    with open(filename.removesuffix(".gz"), "wb") as fp:
-        fp.write(data)
+    with open(filename.removesuffix(".gz"), "w", encoding="utf-8") as fp:
+        fp.write(data.decode())
 
     remove(filename)
 
