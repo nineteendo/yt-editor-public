@@ -83,7 +83,7 @@ def _get_captions(
     if lyrics is not None:
         _append_caption(captions, start, end, lyrics, languages)
 
-    if len(captions) <= 1:
+    if not captions:
         raise SystemExit("Empty captions")
 
     return "\n\n".join(captions)
