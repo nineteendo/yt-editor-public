@@ -16,6 +16,11 @@ def _parse_args() -> Namespace:
     return parser.parse_args()
 
 
+def _event_key(event: tuple[int, Message]) -> tuple[int, bool]:
+    abs_time, msg = event
+    return abs_time, msg.type == 'note_on' and msg.velocity
+
+
 def _merge_tracks(tracks: list[MidiTrack]) -> MidiTrack:
     events: list[tuple[int, Message]] = []
     for track in tracks:
@@ -26,7 +31,7 @@ def _merge_tracks(tracks: list[MidiTrack]) -> MidiTrack:
 
     new_track: MidiTrack = MidiTrack()
     last_time: int = 0
-    for abs_time, msg in sorted(events, key=lambda event: event[0]):
+    for abs_time, msg in sorted(events, key=_event_key):
         new_track.append(msg.copy(time=abs_time - last_time))
         last_time = abs_time
 
