@@ -69,7 +69,7 @@ def _get_captions(
     start: float = 0
     lyrics: list[dict[str, Any]] | str | None = None
     for msg in notes:
-        tick_count: int = msg["ticks"] / msg.get("division", 1)
+        tick_count: float = msg["ticks"] / msg.get("division", 1)
         if "lyrics" in msg:
             new_lyrics: list[dict[str, Any]] | str | None = msg["lyrics"]
             if lyrics is not None:
@@ -97,8 +97,7 @@ def _main() -> None:
 
     ticks_per_minute: float = audio["bpm"] * audio["ppq"]
     languages: list[str] = [
-        caption_label["language"]
-        for caption_label in audio["captionLabels"]
+        caption_label["language"] for caption_label in audio["captionLabels"]
     ]
     caption_dir: str = f"videos/{video_number}/captions"
     makedirs(caption_dir, exist_ok=True)

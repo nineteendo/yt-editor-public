@@ -58,7 +58,8 @@ def _main() -> None:
     track: MidiTrack = MidiTrack()
     current_time: int = 0
     for msg in audio["notes"]:
-        time: int = midi.ticks_per_beat * msg["ticks"] // audio["ppq"]
+        tick_count: float = msg["ticks"] / msg.get("division", 1)
+        time: int = round(midi.ticks_per_beat * tick_count / audio["ppq"])
         if (note_str := msg["note"]) is not None:
             note: int = _note_string_to_midi(note_str)
             track.append(Message('note_on', note=note, time=current_time))
