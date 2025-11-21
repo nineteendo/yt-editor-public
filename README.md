@@ -5,7 +5,7 @@
 ### Step 1 - Create a new `{videoNumber}` directory in [`videos`](videos)
 
 1. **Create a `videos` subdirectory**:
-    1. Download/create a video and save it as `full.mp4`
+    1. Download/create a video, remove black bars and save it as `full.mp4`
     2. Trim the full video to ~1 minute and save it as `short.mp4`
 2. **Create an `audio` subdirectory**:
     1. Download/create a piano arrangement and save it as `full.mid`
@@ -16,6 +16,7 @@
         ```
     3. Edit `simple.json`:
         - Set `"bpm"`, add initial rest and cut off notes to match the trimmed video
+        - Split up notes/rests longer than 2.133 seconds
         - Add original language/translations to `"captionLabels"` and include lyrics, e.g.:
             ```json5
             {
@@ -82,13 +83,13 @@
         python src/compression/compress.py videos/{videoNumber}/resolutions/*.srv3
         ```
 5. **Create a `thumbnails` subdirectory**:
-    1. Download/create a 16:9 thumbnail and save it as `original.png`
+    1. Download/create a thumbnail, crop it to 16:9 and save it as `original.png`
     2. Convert the original thumbnail to Srv3:
         ```bash
         mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows 84
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
-    4. Take a screenshot, crop it and save it as `ascii.png`
+    4. Set character edge style to "raised", take a screenshot, crop it and save it as `ascii.png`
     5. Combine both thumbnails and save them as `combined.png`
 
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
