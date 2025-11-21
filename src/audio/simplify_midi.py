@@ -13,6 +13,7 @@ def _parse_args() -> Namespace:
     parser.add_argument(
         "video_number", type=int, help="The video number to process"
     )
+    parser.add_argument("--parts", type=int, default=1, help="Number of parts")
     return parser.parse_args()
 
 
@@ -82,11 +83,13 @@ def _simplify_track(track: MidiTrack) -> MidiTrack:
 
 
 def _main() -> None:
-    video_number: int = _parse_args().video_number
-    midi: MidiFile = MidiFile(f'videos/{video_number}/audio/full.mid')
-    new_midi: MidiFile = MidiFile()
-    new_midi.tracks.append(_simplify_track(_merge_tracks(midi.tracks)))
-    new_midi.save(f'videos/{video_number}/audio/simple.mid')
+    args: Namespace = _parse_args()
+    for i in range(args.parts):
+        part_dir: str = f'videos/{args.video_number}/audio/parts/{i + 1}'
+        midi: MidiFile = MidiFile(f'{part_dir}/full.mid')
+        new_midi: MidiFile = MidiFile()
+        new_midi.tracks.append(_simplify_track(_merge_tracks(midi.tracks)))
+        new_midi.save(f'{part_dir}/simple.mid')
 
 
 if __name__ == "__main__":

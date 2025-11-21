@@ -60,25 +60,24 @@ def _append_caption(
 
 
 def _get_captions(
-    notes: list[dict[str, Any]],
-    ticks_per_minute: float,
-    end: float,
-    languages: list[str]
+    parts: list[dict[str, Any]], end: float, languages: list[str]
 ) -> str:
     captions: list[str] = []
     start: float = 0
     lyrics: list[dict[str, Any]] | str | None = None
-    for msg in notes:
-        tick_count: float = msg["ticks"] / msg.get("division", 1)
-        if "lyrics" in msg:
-            new_lyrics: list[dict[str, Any]] | str | None = msg["lyrics"]
-            if lyrics is not None:
-                _append_caption(captions, start, end, lyrics, languages)
+    for part in parts:
+        ticks_per_minute: float = part["bpm"] * part["ppq"]
+        for msg in part["notes"]:
+            if "lyrics" in msg:
+                new_lyrics: list[dict[str, Any]] | str | None = msg["lyrics"]
+                if lyrics is not None:
+                    _append_caption(captions, start, end, lyrics, languages)
 
-            lyrics = new_lyrics
-            start = end
+                lyrics = new_lyrics
+                start = end
 
-        end += 60 * tick_count / ticks_per_minute
+            tick_count: float = msg["ticks"] / msg.get("division", 1)
+            end += 60 * tick_count / ticks_per_minute
 
     if lyrics is not None:
         _append_caption(captions, start, end, lyrics, languages)
@@ -95,7 +94,6 @@ def _main() -> None:
     with open(audio_filename, "r", encoding="utf-8") as fp:
         audio: dict[str, Any] = json.load(fp)
 
-    ticks_per_minute: float = audio["bpm"] * audio["ppq"]
     languages: list[str] = [
         caption_label["language"] for caption_label in audio["captionLabels"]
     ]
@@ -103,8 +101,7 @@ def _main() -> None:
     makedirs(caption_dir, exist_ok=True)
     for language in languages:
         captions: str = _get_captions(
-            audio["notes"], ticks_per_minute, audio["introDuration"],
-            [language]
+            audio["parts"], audio["introDuration"], [language]
         )
         output_file: str = f"{caption_dir}/{language}.srt"
         with open(output_file, 'w', encoding="utf-8") as fp:
@@ -112,8 +109,7 @@ def _main() -> None:
 
     if len(languages) >= 2:
         captions = _get_captions(
-            audio["notes"], ticks_per_minute, audio["introDuration"],
-            languages
+            audio["parts"], audio["introDuration"], languages
         )
         output_file = f"{caption_dir}/{'-'.join(languages)}.srt"
         with open(output_file, 'w', encoding="utf-8") as fp:

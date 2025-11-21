@@ -24,6 +24,7 @@ def _parse_args() -> Namespace:
     parser.add_argument(
         "video_number", type=int, help="The video number to process"
     )
+    parser.add_argument("--parts", type=int, default=1, help="Number of parts")
     return parser.parse_args()
 
 
@@ -66,23 +67,29 @@ def _convert_track(track: MidiTrack, ticks_per_beat: int) -> str:
 
 
 def _main() -> None:
-    video_number: int = _parse_args().video_number
-    midi: MidiFile = MidiFile(f'videos/{video_number}/audio/simple.mid')
-    tracks: list[MidiTrack] = midi.tracks
-    if len(tracks) != 1:
-        raise SystemExit("Not exactly one track")
+    args: Namespace = _parse_args()
+    audio_dir: str = f'videos/{args.video_number}/audio'
+    parts: list[MidiTrack] = []
+    for i in range(args.parts):
+        midi: MidiFile = MidiFile(f'{audio_dir}/parts/{i + 1}/simple.mid')
+        tracks: list[MidiTrack] = midi.tracks
+        if len(tracks) != 1:
+            raise SystemExit("Not exactly one track")
 
-    json_filename: str = f'videos/{video_number}/audio/simple.json'
+        parts.append(tracks[0])
+
+    json_filename: str = f'{audio_dir}/simple.json'
     with open(json_filename, "w", encoding="utf-8") as fp:
         fp.write("\n".join([
             '{',
             f'    "introDuration": {_INTRO_DURATION},',
-            f'    "bpm": {_BPM},',
-            f'    "ppq": {_PPQ},',
             '    "captionLabels": [],',
-            '    "notes": [',
-            _convert_track(tracks[0], midi.ticks_per_beat),
-            '    ]',
+            '    "parts": ['
+            + ', '.join("\n".join([
+                f'{{"bpm": {_BPM}, "ppq": {_PPQ}, "notes": [',
+                _convert_track(part, midi.ticks_per_beat),
+                '    ]}'
+            ]) for part in parts) + ']',
             '}',
         ]))
 

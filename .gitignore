@@ -1,7 +1,8 @@
 auth/*
 !auth/public.pem
-videos/*/audio/*
-!videos/*/audio/*.enc
+videos/*/audio/**/*
+!videos/*/audio/**/
+!videos/*/audio/**/*.enc
 videos/*/resolutions/*
 !videos/*/resolutions/*.gz
 .DS_Store

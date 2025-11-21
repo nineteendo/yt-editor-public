@@ -8,11 +8,13 @@
     1. Download/create a video, remove black bars and save it as `full.mp4`
     2. Trim the full video to ~1 minute and save it as `short.mp4`
 2. **Create an `audio` subdirectory**:
-    1. Download/create a piano arrangement and save it as `full.mid`
-    2. Simplify the full midi and convert it to json:
+    1. **Create a `parts/{part}` subdirectory**:
+        1. Download/create a piano arrangement and save it as `full.mid`
+        2. Repeat for all parts
+    2. Simplify the full midi files and convert them to json:
         ```bash
-        python src/audio/simplify_midi.py {videoNumber}
-        python src/audio/midi2json.py {videoNumber}
+        python src/audio/simplify_midi.py {videoNumber} --parts {parts}
+        python src/audio/midi2json.py {videoNumber} --parts {parts}
         ```
     3. Edit `simple.json`:
         - Set `"bpm"`, add initial rest and cut off notes to match the trimmed video
@@ -25,7 +27,7 @@
                     {"language": "fr", "name": "lyrics (original)"},
                     {"language": "en", "name": "lyrics (cover)"}
                 ],
-                "notes": [
+                "parts": [{"notes": [
                     // A note with translated lyrics
                     {"note": "C4", "ticks": 8, "lyrics": [
                         {"language": "fr", "text": "Bonjour"},
@@ -37,12 +39,12 @@
 
                     // End previous lyrics early
                     {"note": null, "ticks": 8, "lyrics": null}
-                ]
+                ]}]
             }
             ```
     4. Encrypt the audio files:
         ```bash
-        python src/encryption/encrypt.py videos/{videoNumber}/audio/*.mid \
+        python src/encryption/encrypt.py videos/{videoNumber}/audio/**/*.mid \
             videos/{videoNumber}/audio/*.json
         ```
 3. **Generate srt files**:

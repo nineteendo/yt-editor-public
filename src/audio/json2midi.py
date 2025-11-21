@@ -50,26 +50,27 @@ def _note_string_to_midi(note_str: str) -> int:
 
 def _main() -> None:
     video_number: int = _parse_args().video_number
-    audio_filename: str = f"videos/{video_number}/audio/simple.json"
-    with open(audio_filename, "r", encoding="utf-8") as fp:
+    audio_dir: str = f"videos/{video_number}/audio"
+    with open(f"{audio_dir}/simple.json", "r", encoding="utf-8") as fp:
         audio: dict[str, Any] = json.load(fp)
 
-    midi: MidiFile = MidiFile()
-    track: MidiTrack = MidiTrack()
-    current_time: int = 0
-    for msg in audio["notes"]:
-        tick_count: float = msg["ticks"] / msg.get("division", 1)
-        time: int = round(midi.ticks_per_beat * tick_count / audio["ppq"])
-        if (note_str := msg["note"]) is not None:
-            note: int = _note_string_to_midi(note_str)
-            track.append(Message('note_on', note=note, time=current_time))
-            current_time = 0
-            track.append(Message('note_off', note=note, time=time))
-        elif track:
-            current_time += time
+    for i, part in enumerate(audio["parts"]):
+        midi: MidiFile = MidiFile()
+        track: MidiTrack = MidiTrack()
+        current_time: int = 0
+        for msg in part["notes"]:
+            tick_count: float = msg["ticks"] / msg.get("division", 1)
+            time: int = round(midi.ticks_per_beat * tick_count / part["ppq"])
+            if (note_str := msg["note"]) is not None:
+                note: int = _note_string_to_midi(note_str)
+                track.append(Message('note_on', note=note, time=current_time))
+                current_time = 0
+                track.append(Message('note_off', note=note, time=time))
+            elif track:
+                current_time += time
 
-    midi.tracks.append(track)
-    midi.save(f'videos/{video_number}/audio/simple.mid')
+        midi.tracks.append(track)
+        midi.save(f'{audio_dir}/parts/{i + 1}/simple.mid')
 
 
 if __name__ == "__main__":
