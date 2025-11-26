@@ -97,6 +97,7 @@
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
 - Set `"videoNumber"` to `{videoNumber}`
+- Set `"skipped"` to `false`
 - Set `"title"` to `"{artist} - {name} - but it's subtitles"`
 - Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
 - Set the name of the thumbnail

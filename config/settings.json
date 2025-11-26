@@ -6,6 +6,7 @@
     "videos": [
         {
             "videoNumber": 1,
+            "skipped": false,
             "title": "Rick Astley - Never Gonna Give You Up - but it's subtitles",
             "descriptionLines": [
                 "Lyrics:",
@@ -57,6 +58,7 @@
         },
         {
             "videoNumber": 2,
+            "skipped": false,
             "title": "ZUN - Bad Apple!! - but it's subtitles",
             "descriptionLines": [
                 "Lyrics (Original):",
@@ -106,6 +108,7 @@
         },
         {
             "videoNumber": 3,
+            "skipped": false,
             "title": "Laura Shigihara - Zombies On Your Lawn - but it's subtitles",
             "descriptionLines": [
                 "Lyrics (English version):",
@@ -164,6 +167,7 @@
         },
         {
             "videoNumber": 4,
+            "skipped": false,
             "title": "CaptainSparklez - Revenge - but it's subtitles",
             "descriptionLines": [
                 "Lyrics:",
