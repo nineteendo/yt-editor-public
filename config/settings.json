@@ -223,6 +223,41 @@
                 "48p1.8 (portrait)",
                 "56p1.3 (portrait)"
             ]
+        },
+        {
+            "videoNumber": 5,
+            "skipped": false,
+            "title": "RobTop - Geometry Dash (Trailer) - but it's subtitles",
+            "descriptionLines": [
+                "Timestamps:",
+                "00:00 - Intro",
+                "00:04 - Polargeist",
+                "00:41 - Jumper",
+                "",
+                "Links:",
+                "- Original: https://youtu.be/k90y6PIzIaE",
+                "- Sheet music (Polargeist): https://musescore.com/user/1732626/scores/1093296",
+                "- Sheet music (Jumper): https://musescore.com/user/11780191/scores/5523615",
+                "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
+                "- YT Editor: https://github.com/nineteendo/yt-editor-public"
+            ],
+            "thumbnailName": "combined",
+            "playlistTitles": [],
+            "tags": ["rob top", "geometry dash", "trailer"],
+            "categoryTitle": "Gaming",
+            "gameInfo": {"title": "Geometry Dash", "year": 2013},
+            "resolutionLanguage": "en",
+            "resolutionNames": [
+                " 12p",
+                " 24p10",
+                " 36p5",
+                " 48p3",
+                " 60p1.9",
+                " 84p1",
+                "60p1.8 (portrait)",
+                "72p1.3 (portrait)",
+                "84p1 (portrait)"
+            ]
         }
     ]
 }
