@@ -1,8 +1,8 @@
 {
     "videoId": "XtfY7RMEPIg",
     "globalTags": ["nice zombies", "subtitles", "piano", "ascii art"],
-    "privacyStatus": "private",
-    "publishSchedule": {"epoch": "2025-02-28", "interval": 1},
+    "privacyStatus": "public",
+    "publishSchedule": {"epoch": "2025-11-26", "interval": 7},
     "videos": [
         {
             "videoNumber": 1,
