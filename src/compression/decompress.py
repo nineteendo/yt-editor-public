@@ -29,7 +29,7 @@ def _decompress_file(filename: str) -> None:
 def _main() -> None:
     args: Namespace = _parse_args()
     for file in args.files:
-        if not (matches := glob(file)):
+        if not (matches := glob(file, recursive=True)):
             raise SystemExit(f"No matches found: {file}")
 
         for match in matches:
