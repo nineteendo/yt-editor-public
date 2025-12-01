@@ -102,10 +102,10 @@
 - Set `"skipped"` to `false`
 - Set `"title"` to `"{artist} - {name} - but it's subtitles"`
 - Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
-- Set the name of the thumbnail
+- Set `"thumbnailName"` to `"combined"`
 - Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
 - Add relevant tags
 - Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
 - If applicable, add title and year to `"gameInfo"`
-- Set `"resolutionLanguage"` to the original language
+- Set `"resolutionLanguage"` to `"en"`
 - Add resolution names (with leading spaces)
