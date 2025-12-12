@@ -48,12 +48,12 @@
                 " 12p",
                 " 24p10",
                 " 36p5",
-                " 48p3.3",
-                " 60p2",
+                " 48p3",
+                " 60p1.9",
                 " 72p1.4",
                 " 84p1.1",
                 "60p2.1 (narrow)",
-                "72p1.7 (portrait)",
+                "72p1.6 (portrait)",
                 "84p1.2 (portrait)"
             ]
         },
@@ -104,8 +104,8 @@
                 "144p7.5",
                 "192p4.3",
                 "240p2.7 (narrow)",
-                "288p1.9 (portrait)",
-                "336p1.4 (portrait)"
+                "288p2 (portrait)",
+                "336p1.5 (portrait)"
             ]
         },
         {
@@ -224,8 +224,8 @@
                 " 48p1.7",
                 " 56p1.2",
                 "40p2.3 (wide)",
-                "48p1.8 (portrait)",
-                "56p1.3 (portrait)"
+                "48p1.7 (portrait)",
+                "56p1.2 (portrait)"
             ]
         },
         {
@@ -258,8 +258,9 @@
                 " 36p5",
                 " 48p3",
                 " 60p1.9",
+                " 72p1.4",
                 " 84p1",
-                "60p1.8 (portrait)",
+                "60p1.9 (portrait)",
                 "72p1.3 (portrait)",
                 "84p1 (portrait)"
             ]
