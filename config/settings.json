@@ -2,7 +2,7 @@
     "videoId": "XtfY7RMEPIg",
     "globalTags": ["nice zombies", "subtitles", "piano", "ascii art"],
     "privacyStatus": "public",
-    "publishSchedule": {"epoch": "2025-12-11", "interval": 7},
+    "publishSchedule": {"epoch": "2025-12-13", "interval": 7},
     "videos": [
         {
             "videoNumber": 1,
@@ -110,7 +110,7 @@
         },
         {
             "videoNumber": 3,
-            "skipped": false,
+            "skipped": true,
             "title": "Laura Shigihara - Zombies On Your Lawn - but it's subtitles",
             "descriptionLines": [
                 "Lyrics (English version):",
@@ -230,7 +230,7 @@
         },
         {
             "videoNumber": 5,
-            "skipped": false,
+            "skipped": true,
             "title": "RobTop - Geometry Dash (Trailer) - but it's subtitles",
             "descriptionLines": [
                 "Timestamps:",
