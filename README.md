@@ -90,19 +90,19 @@
     1. Download/create a thumbnail, crop it to 16:9 and save it as `original.png`
     2. Convert the original thumbnail to Srv3:
         ```bash
-        mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png --rows 84
+        mp4_to_srv3 videos/{videoNumber}/thumbnails/original.png \
+            --submsoffset 4000 --rows 24 --layers 8
         ```
     3. Upload the output Srv3 as a subtitle to any video in YouTube Studio
-    4. Set character edge style to "raised", take a screenshot, crop it and save it as `ascii.png`
-    5. Combine both thumbnails and save them as `combined.png`
+    4. Set character edge style to "outline", take a screenshot, crop it and save it as `ascii.png`
 
 ### Step 2 - Add a new entry to `"videos"` in [`config/settings.json`](config/settings.json)
 
 - Set `"videoNumber"` to `{videoNumber}`
 - Set `"skipped"` to `false`
-- Set `"title"` to `"{artist} - {name} - but it's subtitles"`
+- Set `"title"` to `"{artist} - {name} - but it's colored braille"`
 - Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
-- Set `"thumbnailName"` to `"combined"`
+- Set `"thumbnailName"` to `"ascii"`
 - Add relevant playlist titles from https://www.youtube.com/@nicezombies1/playlists
 - Add relevant tags
 - Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)

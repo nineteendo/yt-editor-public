@@ -1,13 +1,13 @@
 {
     "videoId": "XtfY7RMEPIg",
-    "globalTags": ["nice zombies", "subtitles", "piano", "ascii art"],
+    "globalTags": ["nice zombies", "colored braille", "piano", "subtitles", "ascii art"],
     "privacyStatus": "public",
-    "publishSchedule": {"epoch": "2025-12-13", "interval": 7},
+    "publishSchedule": {"epoch": "2025-12-16", "interval": 7},
     "videos": [
         {
             "videoNumber": 1,
             "skipped": false,
-            "title": "Rick Astley - Never Gonna Give You Up - but it's subtitles",
+            "title": "Rick Astley - Never Gonna Give You Up - but it's colored braille",
             "descriptionLines": [
                 "Lyrics:",
                 "We're no strangers to love",
@@ -37,7 +37,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
-            "thumbnailName": "combined",
+            "thumbnailName": "ascii",
             "playlistTitles": [],
             "tags": ["rick astley", "never gonna give you up", "rick roll", "karaoke"],
             "categoryTitle": "Music",
@@ -60,7 +60,7 @@
         {
             "videoNumber": 2,
             "skipped": false,
-            "title": "ZUN - Bad Apple!! - but it's subtitles",
+            "title": "ZUN - Bad Apple!! - but it's colored braille",
             "descriptionLines": [
                 "Lyrics (Original):",
                 "流れてく　時の中ででも　気だるさが　ほらグルグル廻って",
@@ -91,7 +91,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
-            "thumbnailName": "combined",
+            "thumbnailName": "ascii",
             "playlistTitles": [],
             "tags": ["zun", "ずん", "bad apple", "バッドアップル", "touhou", "karaoke"],
             "categoryTitle": "Gaming",
@@ -111,7 +111,7 @@
         {
             "videoNumber": 3,
             "skipped": true,
-            "title": "Laura Shigihara - Zombies On Your Lawn - but it's subtitles",
+            "title": "Laura Shigihara - Zombies On Your Lawn - but it's colored braille",
             "descriptionLines": [
                 "Lyrics (English version):",
                 "One, two, three!",
@@ -148,7 +148,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
-            "thumbnailName": "combined",
+            "thumbnailName": "ascii",
             "playlistTitles": ["Plants vs. Zombies"],
             "tags": ["laura shigihara", "鴫原 ローラ", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "karaoke"],
             "categoryTitle": "Gaming",
@@ -171,7 +171,7 @@
         {
             "videoNumber": 4,
             "skipped": false,
-            "title": "CaptainSparklez - Revenge - but it's subtitles",
+            "title": "CaptainSparklez - Revenge - but it's colored braille",
             "descriptionLines": [
                 "Lyrics:",
                 "So we back in the mine",
@@ -208,7 +208,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
-            "thumbnailName": "combined",
+            "thumbnailName": "ascii",
             "playlistTitles": ["Minecraft"],
             "tags": ["captain sparklez", "revenge", "minecraft", "creeper", "aww man", "karaoke"],
             "categoryTitle": "Gaming",
@@ -231,7 +231,7 @@
         {
             "videoNumber": 5,
             "skipped": true,
-            "title": "RobTop - Geometry Dash (Trailer) - but it's subtitles",
+            "title": "RobTop - Geometry Dash (Trailer) - but it's colored braille",
             "descriptionLines": [
                 "Timestamps:",
                 "00:00 - Intro",
@@ -245,7 +245,7 @@
                 "- Mp4 to Srv3: https://github.com/nineteendo/Mp4-To-Srv3",
                 "- YT Editor: https://github.com/nineteendo/yt-editor-public"
             ],
-            "thumbnailName": "combined",
+            "thumbnailName": "ascii",
             "playlistTitles": [],
             "tags": ["rob top", "geometry dash", "trailer"],
             "categoryTitle": "Gaming",
