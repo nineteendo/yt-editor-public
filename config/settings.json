@@ -1,12 +1,11 @@
 {
-    "videoId": "XtfY7RMEPIg",
     "globalTags": ["nice zombies", "colored braille", "piano", "subtitles", "ascii art"],
-    "privacyStatus": "public",
     "publishSchedule": {"epoch": "2025-12-20", "interval": 7},
     "videos": [
         {
             "videoNumber": 1,
             "skipped": false,
+            "videoId": "XtfY7RMEPIg",
             "title": "Rick Astley - Never Gonna Give You Up - but it's colored braille",
             "descriptionLines": [
                 "Lyrics:",
@@ -42,6 +41,7 @@
             "tags": ["rick astley", "never gonna give you up", "rick roll", "karaoke"],
             "categoryTitle": "Music",
             "gameInfo": null,
+            "privacyStatus": "public",
             "resolutionLanguage": "en",
             "resolutionNames": [
                 "  5p",
@@ -60,6 +60,7 @@
         {
             "videoNumber": 2,
             "skipped": false,
+            "videoId": "IGYuTT9_3tA",
             "title": "ZUN - Bad Apple!! - but it's colored braille",
             "descriptionLines": [
                 "Lyrics (Original):",
@@ -96,6 +97,7 @@
             "tags": ["zun", "ずん", "bad apple", "バッドアップル", "touhou", "karaoke"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Lotus Land Story", "year": 1998},
+            "privacyStatus": "public",
             "resolutionLanguage": "en",
             "resolutionNames": [
                 " 20p",
@@ -110,7 +112,8 @@
         },
         {
             "videoNumber": 3,
-            "skipped": true,
+            "skipped": false,
+            "videoId": "EDMQYFxa2kk",
             "title": "Laura Shigihara - Zombies On Your Lawn - but it's colored braille",
             "descriptionLines": [
                 "Lyrics (English version):",
@@ -153,6 +156,7 @@
             "tags": ["laura shigihara", "鴫原 ローラ", "zombies on your lawn", "芝生にゾンビが", "plants vs zombies", "karaoke"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Plants vs. Zombies", "year": 2009},
+            "privacyStatus": "public",
             "resolutionLanguage": "en",
             "resolutionNames": [
                 "  5p",
@@ -171,6 +175,7 @@
         {
             "videoNumber": 4,
             "skipped": false,
+            "videoId": "iuILUI-CfgE",
             "title": "CaptainSparklez - Revenge - but it's colored braille",
             "descriptionLines": [
                 "Lyrics:",
@@ -213,6 +218,7 @@
             "tags": ["captain sparklez", "revenge", "minecraft", "creeper", "aww man", "karaoke"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Minecraft", "year": 2009},
+            "privacyStatus": "public",
             "resolutionLanguage": "en",
             "resolutionNames": [
                 "  4p",
@@ -230,7 +236,8 @@
         },
         {
             "videoNumber": 5,
-            "skipped": true,
+            "skipped": false,
+            "videoId": "baEU9aFe0q4",
             "title": "RobTop - Geometry Dash (Trailer) - but it's colored braille",
             "descriptionLines": [
                 "Timestamps:",
@@ -250,6 +257,7 @@
             "tags": ["rob top", "geometry dash", "trailer"],
             "categoryTitle": "Gaming",
             "gameInfo": {"title": "Geometry Dash", "year": 2013},
+            "privacyStatus": "public",
             "resolutionLanguage": "en",
             "resolutionNames": [
                 "  5p",

@@ -100,6 +100,7 @@
 
 - Set `"videoNumber"` to `{videoNumber}`
 - Set `"skipped"` to `false`
+- Set `"videoId"` to a new/existing video id
 - Set `"title"` to `"{artist} - {name} - but it's colored braille"`
 - Add lyrics/translations, timestamps and relevant links to `"descriptionLines"`
 - Set `"thumbnailName"` to `"ascii"`
@@ -107,5 +108,6 @@
 - Add relevant tags
 - Set `"categoryTitle"` to one of the categories from [`config/categories.json`](config/categories.json)
 - If applicable, add title and year to `"gameInfo"`
+- Set `"privacyStatus"` to `"public"`
 - Set `"resolutionLanguage"` to `"en"`
 - Add resolution names (with leading spaces)
