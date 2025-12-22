@@ -1,6 +1,6 @@
 {
     "globalTags": ["nice zombies", "colored braille", "piano", "subtitles", "ascii art"],
-    "publishSchedule": {"epoch": "2025-12-20", "interval": 7},
+    "publishSchedule": {"epoch": "2025-12-22", "interval": 7},
     "videos": [
         {
             "videoNumber": 1,
