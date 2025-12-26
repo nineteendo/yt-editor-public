@@ -1,4 +1,5 @@
 {
+    "globalPlaylistTitles": ["Colored braille"],
     "globalTags": ["nice zombies", "colored braille", "piano", "subtitles", "ascii art"],
     "publishSchedule": {"epoch": "2025-12-26", "interval": 7},
     "videos": [
